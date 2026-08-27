@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acessibilidade nos Lugares</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f8fa;
+            color: #222;
+            transition: 0.3s;
+        }
+
+        /* CABEÇALHO */
+
+        header {
+            background: linear-gradient(135deg, #155e75, #0e7490);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 46px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        /* MENU */
+
+        nav {
+            background: #083344;
+            padding: 18px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 30px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            color: #67e8f9;
+        }
+
+        /* BOTÕES DE ACESSIBILIDADE */
+
+        .acessibilidade {
+            text-align: center;
+            padding: 20px;
+            background: white;
+        }
+
+        .acessibilidade button {
+            border: none;
+            padding: 10px 18px;
+            margin: 5px;
+            border-radius: 8px;
+            background: #155e75;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .acessibilidade button:hover {
+            background: #0e7490;
+        }
+
+        /* SEÇÃO PRINCIPAL */
+
+        .inicio {
+            width: 80%;
+            margin: 60px auto;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .texto {
+            width: 55%;
+        }
+
+        .texto h2 {
+            font-size: 34px;
+            color: #155e75;
+            margin-bottom: 20px;
+        }
+
+        .texto p {
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        .imagem {
+            width: 45%;
+            height: 280px;
+            background: linear-gradient(135deg, #a5f3fc, #cffafe);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 100px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        /* CARDS */
+
+        .titulo {
+            text-align: center;
+            margin-top: 50px;
+            color: #155e75;
+            font-size: 32px;
+        }
+
+        .cards {
+            width: 80%;
+            margin: 35px auto 60px;
+            display: flex;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            flex: 1;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .icone {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #155e75;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .card p {
+            line-height: 1.6;
+            font-size: 17px;
+        }
+
+        /* IMPORTÂNCIA */
+
+        .importancia {
+            background: #dff3f7;
+            text-align: center;
+            padding: 60px 20%;
+        }
+
+        .importancia h2 {
+            color: #155e75;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .importancia p {
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        /* FRASE FINAL */
+
+        .frase {
+            text-align: center;
+            padding: 60px;
+            background: white;
+        }
+
+        .frase h2 {
+            color: #155e75;
+            font-size: 30px;
+        }
+
+        .frase p {
+            margin-top: 15px;
+            font-size: 19px;
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            background: #083344;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* MODO CONTRASTE */
+
+        .contraste {
+            background: #000 !important;
+            color: #fff !important;
+        }
+
+        .contraste header,
+        .contraste nav,
+        .contraste footer {
+            background: #000;
+            color: #fff;
+        }
+
+        .contraste .card,
+        .contraste .frase,
+        .contraste .acessibilidade {
+            background: #111;
+            color: #fff;
+        }
+
+        .contraste h1,
+        .contraste h2,
+        .contraste h3,
+        .contraste p {
+            color: #fff !important;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>♿ Acessibilidade nos Lugares</h1>
+
+        <p>
+            Construindo espaços mais inclusivos, seguros e acessíveis para todos.
+        </p>
+
+    </header>
+
+
+    <nav>
+
+        <a href="#inicio">Início</a>
+
+        <a href="#tipos">Tipos de acessibilidade</a>
+
+        <a href="#importancia">Importância</a>
+
+    </nav>
+
+
+    <!-- FERRAMENTAS DE ACESSIBILIDADE -->
+
+    <div class="acessibilidade">
+
+        <strong>Ferramentas de acessibilidade:</strong>
+
+        <button onclick="aumentarFonte()">
+            A+ Aumentar letra
+        </button>
+
+        <button onclick="diminuirFonte()">
+            A- Diminuir letra
+        </button>
+
+        <button onclick="contraste()">
+            ◐ Alto contraste
+        </button>
+
+    </div>
+
+
+    <!-- INÍCIO -->
+
+    <section class="inicio" id="inicio">
+
+        <div class="texto">
+
+            <h2>O que é acessibilidade?</h2>
+
+            <p>
+                A acessibilidade é a possibilidade de todas as pessoas
+                utilizarem espaços, serviços e informações com segurança,
+                autonomia e igualdade.
+            </p>
+
+            <br>
+
+            <p>
+                Ela é fundamental para garantir que pessoas com deficiência
+                ou com dificuldades de mobilidade possam participar
+                plenamente da sociedade.
+            </p>
+
+        </div>
+
+
+        <div class="imagem">
+
+            ♿
+
+        </div>
+
+    </section>
+
+
+    <!-- TIPOS -->
+
+    <h2 class="titulo" id="tipos">
+        Exemplos de acessibilidade
+    </h2>
+
+
+    <section class="cards">
+
+        <div class="card">
+
+            <div class="icone">
+                ♿
+            </div>
+
+            <h3>Mobilidade</h3>
+
+            <p>
+                Rampas, elevadores, corrimãos e espaços adequados
+                facilitam a circulação de pessoas.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icone">
+                🔊
+            </div>
+
+            <h3>Comunicação</h3>
+
+            <p>
+                Sinalizações visuais, sonoras e informações acessíveis
+                ajudam diferentes pessoas a compreender os ambientes.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icone">
+                👁️
+            </div>
+
+            <h3>Informação</h3>
+
+            <p>
+                Letras legíveis, bom contraste e recursos para pessoas
+                com deficiência visual tornam a informação mais acessível.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- IMPORTÂNCIA -->
+
+    <section class="importancia" id="importancia">
+
+        <h2>
+            Por que a acessibilidade é importante?
+        </h2>
+
+        <p>
+            Um ambiente acessível promove inclusão, independência,
+            segurança e igualdade. Pequenas mudanças nos espaços podem
+            fazer uma grande diferença na vida das pessoas.
+        </p>
+
+    </section>
+
+
+    <!-- FRASE FINAL -->
+
+    <section class="frase">
+
+        <h2>
+            "Acessibilidade não é privilégio.
+            É direito de todos."
+        </h2>
+
+        <p>
+            Construir espaços acessíveis é construir uma sociedade melhor.
+        </p>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 - Projeto sobre Acessibilidade
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        let tamanho = 100;
+
+        function aumentarFonte() {
+
+            if (tamanho < 140) {
+
+                tamanho += 10;
+
+                document.body.style.fontSize = tamanho + "%";
+
+            }
+
+        }
+
+
+        function diminuirFonte() {
+
+            if (tamanho > 80) {
+
+                tamanho -= 10;
+
+                document.body.style.fontSize = tamanho + "%";
+
+            }
+
+        }
+
+
+        function contraste() {
+
+            document.body.classList.toggle("contraste");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
